@@ -1,51 +1,36 @@
 // Fungsi buka popup promo
-function showPromo() {
-  const promoModal = document.getElementById('promoModal');
-  if (promoModal && !sessionStorage.getItem('hidePromo')) {
-    promoModal.style.display = 'flex';
-    promoModal.classList.add('fade-in');
-  }
-}
-
-// Fungsi tutup popup
-function closePromo() {
-  const hideCheckbox = document.getElementById('hidePromoCheckbox');
-  const promoModal = document.getElementById('promoModal');
-
-  if (hideCheckbox?.checked) {
-    sessionStorage.setItem('hidePromo', 'true');
+  function showPromo() {
+    // Cek apakah user sebelumnya memilih untuk menyembunyikan popup
+    if (!sessionStorage.getItem('hidePromo')) {
+      document.getElementById('promoModal').style.display = 'flex';
+    }
   }
 
-  if (promoModal) {
-    promoModal.style.display = 'none';
-    promoModal.classList.remove('fade-in');
+  // Fungsi tutup popup
+  function closePromo() {
+    const hideCheckbox = document.getElementById('hidePromoCheckbox');
+    if (hideCheckbox.checked) {
+      // Simpan di sessionStorage agar popup tidak muncul lagi di tab ini
+      sessionStorage.setItem('hidePromo', 'true');
+    }
+    document.getElementById('promoModal').style.display = 'none';
   }
-}
 
-// Event: setelah site loader selesai, tampilkan popup
-document.addEventListener('DOMContentLoaded', () => {
-  const siteLoader = document.getElementById('siteLoader');
+  // Event: setelah site loader selesai, tampilkan popup
+  document.addEventListener('DOMContentLoaded', function() {
+    const siteLoader = document.getElementById('siteLoader');
 
-  // Kalau ada site loader, tunggu sampai hilang
-  if (siteLoader) {
-    const observer = new MutationObserver(() => {
-      const hiddenByStyle = siteLoader.style.display === 'none';
-      const hiddenByClass = siteLoader.classList.contains('hidden');
-      const removedFromDOM = !document.body.contains(siteLoader);
-
-      if (hiddenByStyle || hiddenByClass || removedFromDOM) {
-        observer.disconnect();
-        setTimeout(showPromo, 500); // Delay 0.5 detik biar smooth
-      }
-    });
-
-    observer.observe(siteLoader, {
-      attributes: true,
-      attributeFilter: ['style', 'class']
-    });
-  } 
-  // Kalau loader nggak ada, langsung tampilkan popup
-  else {
-    setTimeout(showPromo, 500);
-  }
-});
+    if (siteLoader) {
+      // Observasi loader sampai hilang
+      const observer = new MutationObserver(() => {
+        if (siteLoader.style.display === 'none' || siteLoader.classList.contains('hidden')) {
+          observer.disconnect();
+          setTimeout(showPromo, 500); // beri jeda 0.5 detik biar smooth
+        }
+      });
+      observer.observe(siteLoader, { attributes: true, attributeFilter: ['style', 'class'] });
+    } else {
+      // Kalau loader gak ada, langsung tampilkan popup
+      setTimeout(showPromo, 500);
+    }
+  });
