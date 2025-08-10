@@ -1,0 +1,26 @@
+/* Posisi modal di tengah layar, responsif */
+#promo .modal-dialog {
+  max-width: 90%;
+  width: 600px;
+  margin: auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#promo .modal-content {
+  border: none;
+  background: transparent;
+}
+
+#promo .modal-body {
+  padding: 0;
+  text-align: center;
+}
+
+#promo .modal-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+  cursor: pointer;
+}

@@ -1,0 +1,90 @@
+body {
+  font-family: monospace;
+  background: #000;
+  background-image: radial-gradient(#000 5%, transparent 50%);
+  background-size: 1px 1px;
+  background-attachment: fixed;
+  margin: 0;
+}
+
+.container {
+  max-width: 400px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.welcome h1 {
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  border-right: .15em solid #fff;
+  white-space: nowrap;
+  letter-spacing: .09em;
+  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+.banner {
+  max-width: 420px; /* samakan dengan tombol */
+  width: 100%;
+  display: block;
+  margin: 0 auto; /* rata tengah */
+  border-radius: 10px;
+  cursor: pointer;
+  animation: borderPulse 1.5s infinite ease-out;
+}
+
+.banner:hover {
+  animation: none;
+  filter: brightness(1.0) drop-shadow(0px 0px 10px #FF4500);
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 kolom sama besar */
+  gap: 5px 20px; /* vertikal 15px, horizontal 20px */
+  width: 100%; /* agar fleksibel */
+  max-width: 420px; /* samakan dengan lebar gambar */
+  margin: 0 auto;
+}
+
+.button-grid a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px; /* tinggi tombol */
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  text-shadow: 2px 1px 9px rgb(0 0 0 / 70%);
+  color: #fff;
+  background-color: #ffcc00;
+  border: none;
+  background-size: 300% 300%;
+  box-sizing: border-box;
+}
+
+.button-grid a:hover {
+  background-color: #ffdb4d;
+  transform: translateY(-3px);
+}
+
+
+
+
+.button-blue {
+  background-image: linear-gradient(195deg, rgb(255, 208, 0), rgb(255, 208, 0));
+  animation: background-gold 3s infinite;
+  margin-top: 15px;
+}
+
+.copyright {
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+}

@@ -1,0 +1,27 @@
+#siteLoader {
+  position: fixed;
+  inset: 0;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.4s ease;
+}
+
+#siteLoader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#siteLoader .loader {
+  max-width: 500px;      /* Batas maksimum di layar besar */
+  width: 30vw;           /* Responsif di layar kecil (30% dari lebar layar) */
+  height: auto;
+  animation: fadein 0.6s ease-in-out;
+}
+
+@keyframes fadein {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
