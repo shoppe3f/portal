@@ -150,16 +150,18 @@
       <img class="loader" src="assets/media/loading alx.gif" alt="loading" />
     </div>
 
-    <!-- POPUP WRAPPER -->
+    <!-- POPUP WRAPPER (awal disembunyikan) -->
 <div id="promoPopup" style="
   position: fixed;
   top: 0; left: 0; 
   width: 100%; height: 100%;
   background: rgba(0,0,0,0.7);
-  display: flex;
+  display: none; /* awalnya disembunyikan */
   align-items: center;
   justify-content: center;
   z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 ">
   <div style="position: relative; max-width: 90%; max-height: 90%;">
     <img src="assets/media/promo 3spin.jpg" alt="Promo Alexis4D" style="max-width:100%; height:auto; border-radius:10px; cursor:pointer;">
@@ -169,11 +171,46 @@
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     const popup = document.getElementById("promoPopup");
+    const loader = document.getElementById("siteLoader");
 
-    // Klik di gambar atau area popup untuk menutup
-    popup.addEventListener("click", function() {
-      popup.style.display = "none";
-    });
+    function showPopup() {
+      popup.style.display = "flex";
+      requestAnimationFrame(() => {
+        popup.style.opacity = "1";
+      });
+    }
+
+    function hidePopup() {
+      popup.style.opacity = "0";
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 500); // sesuai durasi fade-out
+    }
+
+    // Klik popup untuk menutup
+    popup.addEventListener("click", hidePopup);
+
+    if (loader) {
+      // Cek perubahan loader
+      const observer = new MutationObserver(() => {
+        const hiddenByStyle = loader.style.display === 'none';
+        const hiddenByClass = loader.classList.contains('hidden');
+        const removedFromDOM = !document.body.contains(loader);
+
+        if (hiddenByStyle || hiddenByClass || removedFromDOM) {
+          observer.disconnect();
+          setTimeout(showPopup, 500); // delay 0.5 detik setelah loader hilang
+        }
+      });
+
+      observer.observe(loader, {
+        attributes: true,
+        attributeFilter: ['style', 'class']
+      });
+    } else {
+      // Kalau loader nggak ada, langsung tampilkan popup
+      setTimeout(showPopup, 500);
+    }
   });
 </script>
 
