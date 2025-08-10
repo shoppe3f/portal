@@ -151,17 +151,20 @@
     </div>
 
     <!-- Promo Modal -->
-    <div class="modal fade" id="promo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-body" style="padding: 0px">
-            <a href="https://goshort.info/alexis4d" target="_blank">
-              <img src="assets/media/promo.jpg" alt="Promo Alexis4D" class="imgpop" />
-            </a>
-          </div>
-        </div>
-      </div>
+    <div id="promoModal" class="promo-overlay" style="display:none;">
+  <div class="promo-content">
+    <span class="promo-close" onclick="closePromo()">&times;</span>
+    <a href="https://goshort.info/alexis4d" target="_blank" rel="noopener noreferrer">
+      <img src="assets/media/promo.jpg" alt="Promo Alexis4D" class="promo-image" />
+    </a>
+    <div class="promo-options">
+      <label>
+        <input type="checkbox" id="hidePromoCheckbox">
+        Jangan tampilkan lagi
+      </label>
     </div>
+  </div>
+</div>
 
     <!-- Welcome Text -->
     <div class="welcome">
