@@ -150,21 +150,32 @@
       <img class="loader" src="assets/media/loading alx.gif" alt="loading" />
     </div>
 
-    <!-- Promo Modal -->
-    <div id="promoModal" class="promo-overlay" style="display:none;">
-  <div class="promo-content">
-    <span class="promo-close" onclick="closePromo()">&times;</span>
-    <a href="https://goshort.info/alexis4d" target="_blank" rel="noopener noreferrer">
-      <img src="assets/media/promo.jpg" alt="Promo Alexis4D" class="promo-image" />
-    </a>
-    <div class="promo-options">
-      <label>
-        <input type="checkbox" id="hidePromoCheckbox">
-        Jangan tampilkan lagi
-      </label>
-    </div>
+    <!-- POPUP WRAPPER -->
+<div id="promoPopup" style="
+  position: fixed;
+  top: 0; left: 0; 
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+">
+  <div style="position: relative; max-width: 90%; max-height: 90%;">
+    <img src="assets/media/promo.jpg" alt="Promo Alexis4D" style="max-width:100%; height:auto; border-radius:10px; cursor:pointer;">
   </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const popup = document.getElementById("promoPopup");
+
+    // Klik di gambar atau area popup untuk menutup
+    popup.addEventListener("click", function() {
+      popup.style.display = "none";
+    });
+  });
+</script>
 
     <!-- Welcome Text -->
     <div class="welcome">
