@@ -62,63 +62,25 @@
   <link rel="stylesheet" href="assets/style/fragments/phantom.css" />
 
   <style>
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    gap: 10px;
-    max-width: 500px;
-    margin: auto;
-}
-
-.column {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex: 1;
-    gap: 10px;
-}
-
-.button {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-    background-color: #FFD000;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 0 0 rgba(255, 208, 0, 0.8);
-    animation: glow 1.5s infinite;
-}
-
-/* Animasi menyala */
-@keyframes glow {
-    0% { box-shadow: 0 0 0 rgba(255, 208, 0, 0.8); transform: scale(1); }
-    50% { box-shadow: 0 0 20px rgba(255, 208, 0, 1); transform: scale(1.05); }
-    100% { box-shadow: 0 0 0 rgba(255, 208, 0, 0.8); transform: scale(1); }
-}
-
-/* Delay nyala bergantian */
-.button:nth-child(1) { animation-delay: 0s; }
-.button:nth-child(2) { animation-delay: 0.3s; }
-.button:nth-child(3) { animation-delay: 0.6s; }
-.button:nth-child(4) { animation-delay: 0.9s; }
-</style>
-
-<div class="container">
-    <div class="column">
-        <a href="#" class="button">LOGIN</a>
-        <a href="#" class="button">RTP</a>
-    </div>
-    <div class="column">
-        <a href="#" class="button">DAFTAR</a>
-        <a href="#" class="button">LIVECHAT</a>
-    </div>
-</div>
+    /* Animations */
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #fbf4a0; }
+    }
+    @keyframes background-gold {
+      0% { background-position: 0% 82%; }
+      50% { background-position: 100% 0%; }
+      100% { background-position: 0% 82%; }
+    }
+    @keyframes borderPulse {
+      0% { filter: drop-shadow(0px 0px 2px #FF4500); }
+      50% { filter: drop-shadow(0px 0px 10px #FF4500); }
+      100% { filter: drop-shadow(0px 0px 2px #FF4500); }
+    }
     body {
       font-family: monospace;
       background: #000;
