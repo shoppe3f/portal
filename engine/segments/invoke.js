@@ -2,7 +2,7 @@
   function showPromo() {
     // Cek apakah user sebelumnya memilih untuk menyembunyikan popup
     if (!sessionStorage.getItem('hidePromo')) {
-      document.getElementById('promoModal').style.display = 'flex';
+      document.getElementById('POPUP WRAPPER').style.display = 'flex';
     }
   }
 
@@ -13,7 +13,7 @@
       // Simpan di sessionStorage agar popup tidak muncul lagi di tab ini
       sessionStorage.setItem('hidePromo', 'true');
     }
-    document.getElementById('promoModal').style.display = 'none';
+    document.getElementById('POPUP WRAPPER').style.display = 'none';
   }
 
   // Event: setelah site loader selesai, tampilkan popup
