@@ -5,28 +5,33 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Alexis4D – Slot & Toto Gacor Hari Ini</title>
-  <meta name="description" content="Alexis4D adalah situs slot dan toto online gacor hari ini dengan game lengkap, transaksi cepat, dan layanan 24 jam nonstop." />
+  <meta name="description" content="Alexis4D sebagai situs bandar gacor yang menyediakan banyak permainan dalam 1 akun dengan minimal deposit hanya 20ribu." />
   <meta name="keywords" content="alexis4d, alexis4d resmi, alexis4d slot, alexis4d toto" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="id_ID" />
-  <meta property="og:title" content="Alexis4D – Slot & Toto Gacor Hari Ini" />
-  <meta property="og:description" content="Alexis4D adalah situs slot dan toto online gacor hari ini dengan game lengkap, transaksi cepat, dan layanan 24 jam nonstop." />
-  <meta property="og:url" content="https://alxportal.netlify.app/" />
-  <meta property="og:image" content="https://raw.githubusercontent.com/shoppe3f/portal/main/link-alexis4d.jpg" />
-  
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Alexis4D – Slot & Toto Gacor Hari Ini" />
-  <meta name="twitter:description" content="Slot dan toto online gacor hari ini dengan akses cepat & aman." />
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/shoppe3f/portal/main/link-alexis4d.jpg" />
-  
+
   <!-- SEO & Author Info -->
   <meta name="robots" content="index, follow" />
   <meta name="googlebot" content="index, follow" />
   <meta name="google" content="notranslate" />
+  <meta name="rating" content="general" />
   <meta name="language" content="id-ID" />
+  <meta name="geo.region" content="ID" />
+  <meta name="geo.country" content="id" />
+  <meta name="geo.placename" content="Indonesia" />
+  <meta name="distribution" content="global" />
   <meta name="copyright" content="Alexis4D" />
   <meta name="author" content="Alexis4D" />
   <meta name="publisher" content="Alexis4D" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="id_ID" />
+  <meta property="og:locale:alternate" content="en_ID" />
+  <meta property="og:title" content="Alexis4D – Slot & Toto Gacor Hari Ini" />
+  <meta property="og:description" content="Alexis4D adalah situs slot dan toto online gacor hari ini dengan game lengkap, transaksi cepat, dan layanan 24 jam nonstop." />
+  <meta property="og:url" content="https://github.com/shoppe3f/" />
+  <meta property="og:site_name" content="Alexis4D" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/shoppe3f/portal/main/link-alexis4d.jpg" />
+  <meta property="og:image:alt" content="Alexis4D" />
 
   <!-- Favicon -->
 <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
@@ -46,13 +51,11 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
-  
 
   <!-- Scripts -->
   <script type="module" src="engine/entry/core.js" defer></script>
   <script src="https://analytics.ahrefs.com/analytics.js" data-key="27YY4F2zdKVELDuOcPdYdw" async></script>
   <meta name="google-site-verification" content="OtMPHAr1hNOollDvGOO64r7PhJw7Usnqe-Wd7dBpBRk" />
-  <link rel="canonical" href="https://alxportal.netlify.app/" />
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="assets/style/main.css" />
@@ -139,27 +142,74 @@
   </style>
 </head>
 <body>
- <!-- PROMO POPUP -->
-<div id="promoPopup" class="promo-overlay" style="display:none; opacity:0;">
-  <div class="promo-content">
+  <h2 style="display:none;">Link Alternatif Alexis4D</h2>
 
-    <span class="promo-close">&times;</span>
+  <div class="container">
+    
 
-    <img
-      src="assets/banner/promo-spin.jpg"
-      alt="Promo Alexis4D"
-      class="promo-image"
-    />
-
-    <div class="promo-options">
-      <label>
-        <input type="checkbox" id="hidePromoCheckbox">
-        Jangan tampilkan lagi
-      </label>
-    </div>
-
+    <!-- POPUP WRAPPER (awal disembunyikan) -->
+<div id="promoPopup" style="
+  position: fixed;
+  top: 0; left: 0; 
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: none; /* awalnya disembunyikan */
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+">
+  <div style="position: relative; max-width: 90%; max-height: 90%;">
+    <img src="assets/banner/promo-spin.jpg" alt="Promo Alexis4D" style="max-width:100%; height:auto; border-radius:10px; cursor:pointer;">
   </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const popup = document.getElementById("promoPopup");
+    const loader = document.getElementById("siteLoader");
+
+    function showPopup() {
+      popup.style.display = "flex";
+      requestAnimationFrame(() => {
+        popup.style.opacity = "1";
+      });
+    }
+
+    function hidePopup() {
+      popup.style.opacity = "0";
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 500); // sesuai durasi fade-out
+    }
+
+    // Klik popup untuk menutup
+    popup.addEventListener("click", hidePopup);
+
+    if (loader) {
+      // Cek perubahan loader
+      const observer = new MutationObserver(() => {
+        const hiddenByStyle = loader.style.display === 'none';
+        const hiddenByClass = loader.classList.contains('hidden');
+        const removedFromDOM = !document.body.contains(loader);
+
+        if (hiddenByStyle || hiddenByClass || removedFromDOM) {
+          observer.disconnect();
+          setTimeout(showPopup, 500); // delay 0.5 detik setelah loader hilang
+        }
+      });
+
+      observer.observe(loader, {
+        attributes: true,
+        attributeFilter: ['style', 'class']
+      });
+    } else {
+      // Kalau loader nggak ada, langsung tampilkan popup
+      setTimeout(showPopup, 500);
+    }
+  });
+</script>
 
     <!-- Welcome Text -->
     <div class="welcome">
@@ -173,6 +223,7 @@
 
     <!-- Buttons -->
     <div class="button-grid">
+      <div class="button-grid">
   <a href="https://goshort.info/alexis4d"
      rel="noopener noreferrer nofollow"
      class="buttonWrap button-blue">
@@ -181,15 +232,13 @@
 
   <a href="https://alexisnewsupdateindo.com/?content=register&ref=livechat"
      rel="noopener noreferrer nofollow"
-     class="buttonWrap btn-daftar">
+     class="buttonWrap button-daftar">
      DAFTAR
   </a>
-</div>
-    
+    </div>
     <!-- Footer -->
-<footer>
-    <p class="copyright">© 2026 Presented By • Alexis4D •</p>
 </footer>
+    <p class="copyright">© Copyright 2026 Presented By • Alexis4D •</p>
   </div>
 </body>
 </html>
