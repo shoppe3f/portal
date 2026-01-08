@@ -52,53 +52,47 @@ body {
   margin: 0 auto;
 }
 
-.button-grid a.btn-login {
+/* =========================
+   BUTTON GRID
+   ========================= */
+.button-grid a {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px; /* tinggi tombol */
+  height: 50px;
   border-radius: 10px;
   font-weight: 700;
   font-size: 18px;
   text-align: center;
   text-shadow: 2px 1px 9px rgb(0 0 0 / 70%);
   color: #fff;
-  background-color: #ffba00;
   border: none;
-  background-size: 300% 300%;
   box-sizing: border-box;
+  transition: transform 0.25s ease;
 }
-.button-grid a.btn-daftar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50px; /* tinggi tombol */
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 18px;
-  text-align: center;
-  text-shadow: 2px 1px 9px rgb(0 0 0 / 70%);
-  color: #fff;
-  background: linear-gradient(180deg, #ff0000, #b80000);
-  border: none;
-  background-size: 300% 300%;
-  box-sizing: border-box;
-  animation: pulseRed 1.6s infinite;
+
+/* LOGIN (KUNING / GOLD) */
+.button-grid a.btn-login {
+  background: linear-gradient(180deg, #ffba00, #e6a800);
+  animation: pulseGold 3.5s infinite ease-in-out;
 }
 
 .button-grid a.btn-login:hover {
-  background-color: #ffc321;
+  background: linear-gradient(180deg, #ffc321, #f0b400);
   transform: translateY(-3px);
 }
+
+/* DAFTAR (MERAH) */
+.button-grid a.btn-daftar {
+  background: linear-gradient(180deg, #ff0000, #b80000);
+  animation: pulseRed 1.6s infinite;
+}
+
 .button-grid a.btn-daftar:hover {
   background: linear-gradient(180deg, #ff3333, #d40000);
   transform: translateY(-3px);
-  
-.button-blue {
-  background: linear-gradient(195deg, rgb(255, 208, 0), rgb(255, 208, 0));
-  animation: background-gold 3s infinite, pulseGold 3.5s infinite ease-in-out;
-  margin-top: 15px;
 }
+
   
 @keyframes pulseRed {
   0% { box-shadow: 0 0 0 rgba(255, 0, 0, 0.7); }
@@ -117,3 +111,4 @@ body {
   text-align: center;
   font-size: 12px;
 }
+
