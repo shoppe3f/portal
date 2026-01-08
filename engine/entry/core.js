@@ -1,10 +1,10 @@
-// Modul-modul yang akan dimuat
+// /engine/entry/core.js
+// Core App Initializer (tanpa loader)
+
 const modulesToLoad = [
-  '/engine/entry/bootloader.js',
-  '/engine/segments/invoke.js'
+  '/engine/segments/invoke.js' // hanya popup & logic aktif
 ];
 
-// Fungsi utama untuk memuat dan menjalankan semua modul
 async function initializeCoreApp() {
   console.log('[core] Inisialisasi aplikasi...');
 
@@ -19,61 +19,56 @@ async function initializeCoreApp() {
         mod.init();
         console.log(`[core] Modul ${modulePath} diinisialisasi.`);
       } else {
-        console.log(`[core] Modul ${modulePath} dimuat (tanpa fungsi init/default).`);
+        console.log(`[core] Modul ${modulePath} dimuat (tanpa init).`);
       }
     } catch (err) {
       console.error(`[core] Gagal memuat modul: ${modulePath}`, err);
     }
   }
 
-  // Inisialisasi komponen UI
+  // UI init (aman walau elemennya tidak ada)
   initNavbar();
   initSidebarToggle();
 }
 
-// Fungsi untuk menginisialisasi tombol login dan modal
+/* =========================
+   OPTIONAL UI (AMAN)
+   ========================= */
+
 function initNavbar() {
   const loginBtn = document.querySelector('.btn.login');
   const modal = document.getElementById('loginModal');
   const closeBtn = modal?.querySelector('.close-btn');
 
-  if (loginBtn && modal && closeBtn) {
-    loginBtn.addEventListener('click', () => {
-      modal.style.display = 'flex';
-    });
+  if (!loginBtn || !modal || !closeBtn) return;
 
-    closeBtn.addEventListener('click', () => {
-      modal.style.display = 'none';
-    });
+  loginBtn.addEventListener('click', () => {
+    modal.style.display = 'flex';
+  });
 
-    window.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.style.display = 'none';
-      }
-    });
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
 
-    console.log('[core] Navbar dan modal login siap.');
-  } else {
-    console.warn('[core] Elemen login/modal tidak ditemukan.');
-  }
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) modal.style.display = 'none';
+  });
+
+  console.log('[core] Navbar login siap.');
 }
 
-// Fungsi untuk toggle sidebar (expand/collapse)
 function initSidebarToggle() {
   const toggleBtn = document.getElementById('toggleSidebar');
   const sidebar = document.getElementById('sidebar');
 
-  if (toggleBtn && sidebar) {
-    toggleBtn.addEventListener('click', () => {
-      sidebar.classList.toggle('expanded');
-      sidebar.classList.toggle('collapsed');
-    });
+  if (!toggleBtn || !sidebar) return;
 
-    console.log('[core] Sidebar toggle siap.');
-  } else {
-    console.warn('[core] Sidebar atau tombol toggle tidak ditemukan.');
-  }
+  toggleBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('expanded');
+    sidebar.classList.toggle('collapsed');
+  });
+
+  console.log('[core] Sidebar toggle siap.');
 }
 
-// Jalankan semua saat DOM sudah siap
 document.addEventListener('DOMContentLoaded', initializeCoreApp);
