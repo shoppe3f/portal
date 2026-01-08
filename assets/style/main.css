@@ -1,0 +1,114 @@
+body {
+  font-family: monospace;
+  background: #000;
+  background-image: radial-gradient(#000 5%, transparent 50%);
+  background-size: 1px 1px;
+  background-attachment: fixed;
+  margin: 0;
+}
+
+.container {
+  max-width: 400px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.welcome h1 {
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  border-right: .15em solid #fff;
+  white-space: nowrap;
+  letter-spacing: .09em;
+  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+.banner {
+  max-width: 420px; /* samakan dengan tombol */
+  width: 100%;
+  display: block;
+  margin: 0 auto; /* rata tengah */
+  border-radius: 10px;
+  cursor: pointer;
+  animation: borderPulse 1.5s infinite ease-out;
+}
+
+.banner:hover {
+  animation: none;
+  filter: brightness(1.0) drop-shadow(0px 0px 10px #FF4500);
+}
+
+/* =========================
+   BUTTON GRID
+   ========================= */
+.button-grid a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  text-shadow: 2px 1px 9px rgb(0 0 0 / 70%);
+  color: #fff;
+  border: none;
+  background-size: 300% 300%;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+
+/* =========================
+   LOGIN (GOLD – HALUS)
+   ========================= */
+.button-blue {
+  background: linear-gradient(195deg, rgb(255, 208, 0), rgb(255, 208, 0));
+  animation: background-gold 3s infinite, pulseGold 3.5s infinite ease-in-out;
+  margin-top: 15px;
+}
+
+.button-blue:hover {
+  transform: translateY(-3px);
+  animation: none;
+}
+
+/* =========================
+   DAFTAR (MERAH – KUAT)
+   ========================= */
+.button-grid a.btn-daftar {
+  background: linear-gradient(180deg, #ff0000, #b80000);
+  animation: pulseRed 1.6s infinite;
+}
+
+.button-grid a.btn-daftar:hover {
+  background: linear-gradient(180deg, #ff3333, #d40000);
+  transform: translateY(-3px);
+  animation: none;
+}
+
+/* =========================
+   ANIMATIONS
+   ========================= */
+@keyframes pulseRed {
+  0% { box-shadow: 0 0 0 rgba(255, 0, 0, 0.7); }
+  70% { box-shadow: 0 0 25px rgba(255, 0, 0, 0); }
+  100% { box-shadow: 0 0 0 rgba(255, 0, 0, 0); }
+}
+
+@keyframes pulseGold {
+  0% { box-shadow: 0 0 0 rgba(255, 208, 0, 0.3); }
+  50% { box-shadow: 0 0 15px rgba(255, 208, 0, 0.25); }
+  100% { box-shadow: 0 0 0 rgba(255, 208, 0, 0.3); }
+}
+
+.copyright {
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+}
+
