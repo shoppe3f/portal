@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golden Star Project Template</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0a0a0a;
+      color: #f5f5f5;
+    }
+    header {
+      background: linear-gradient(90deg, #222, #111);
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+      animation: fadeDown 1s ease;
+    }
+    header h1 {
+      font-size: 22px;
+      font-weight: bold;
+      color: #ffd700;
+      margin: 0;
+    }
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color .2s;
+    }
+    nav a:hover {
+      color: #ffd700;
+    }
+    .hero {
+      background: url('https://via.placeholder.com/1200x300/000000/FFD700?text=Golden+Star+Project') center/cover no-repeat;
+      padding: 80px 20px;
+      text-align: center;
+      color: #ffd700;
+      animation: fadeIn 1.5s ease;
+    }
+    .hero h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      animation: slideUp 1s ease;
+    }
+    .hero p {
+      font-size: 18px;
+      animation: slideUp 1.2s ease;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      animation: fadeIn 2s ease;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #ffd700;
+      animation: slideUp 1.5s ease;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 25px;
+    }
+    .card {
+      background: #1c1c1c;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      transition: transform .3s, box-shadow .3s;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: cardFade 0.8s forwards;
+    }
+    .card:nth-child(1) { animation-delay: .2s; }
+    .card:nth-child(2) { animation-delay: .4s; }
+    .card:nth-child(3) { animation-delay: .6s; }
+    .card:nth-child(4) { animation-delay: .8s; }
+    .card:nth-child(5) { animation-delay: 1s; }
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 0 20px rgba(255,215,0,0.6);
+    }
+    .card img {
+      width: 100%;
+      display: block;
+    }
+    .card h4 {
+      text-align: center;
+      padding: 15px;
+      margin: 0;
+      font-size: 18px;
+      color: #fff;
+    }
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 25px;
+      font-size: 14px;
+      color: #999;
+      margin-top: 50px;
+      animation: fadeUp 1.5s ease;
+    }
+    footer span {
+      color: #ffd700;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes cardFade {
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Golden Star Project</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Daftar</a>
+      <a href="#">Live Chat</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h2>Welcome to Golden Star Project</h2>
+    <p>Template Demo with Elegant Dark & Gold Theme</p>
+  </div>
+
+  <div class="container">
+    <div class="section-title">Featured Games</div>
+    <div class="cards">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150/222/fff?text=Game+1" alt="Game 1">
+        <h4>Game Title 1</h4>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150/222/fff?text=Game+2" alt="Game 2">
+        <h4>Game Title 2</h4>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150/222/fff?text=Game+3" alt="Game 3">
+        <h4>Game Title 3</h4>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150/222/fff?text=Game+4" alt="Game 4">
+        <h4>Game Title 4</h4>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150/222/fff?text=Game+5" alt="Game 5">
+        <h4>Game Title 5</h4>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 <span>Golden Star Project</span>. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Demo script: randomize subtitle
+    const subtitles = [
+      "Your Trusted Gaming Partner",
+      "Best Experience Awaits",
+      "Play Smart, Win Big",
+      "Entertainment Beyond Limits"
+    ];
+    document.querySelector('.hero p').innerText = subtitles[Math.floor(Math.random() * subtitles.length)];
+  </script>
+</body>
+</html>
